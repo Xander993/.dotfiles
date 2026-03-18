@@ -4,26 +4,26 @@ format = """
 [](red)\
 $os\
 $username\
+$sudo\
 [](bg:peach fg:red)\
 $directory\
 [](bg:yellow fg:peach)\
 $git_branch\
 $git_status\
-[](fg:yellow bg:green)\
+[](bg:green fg:yellow)\
 $c\
-$rust\
-$golang\
 $nodejs\
 $php\
 $java\
-$kotlin\
-$haskell\
+[](bg:#6295cb fg:green)\
 $cpp\
-$python\
+[](bg:#903ba7 fg:#6295cb)\
 $custom\
-[](fg:green bg:sapphire)\
+[](bg:#f7cc42 fg:#903ba7)\
+$python\
+[](bg:sapphire fg:#f7cc42)\
 $conda\
-[](fg:sapphire bg:lavender)\
+[](bg:lavender fg:sapphire)\
 $time\
 [ ](fg:lavender)\
 $cmd_duration\
@@ -57,6 +57,11 @@ CentOS = ""
 Debian = "󰣚"
 Redhat = "󱄛"
 RedHatEnterprise = "󱄛"
+
+[sudo]
+disabled = false
+style = "bg:red fg:crust"
+format = '[$symbol]($style)'
 
 [username]
 show_always = true
@@ -128,8 +133,8 @@ format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
 [python]
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:green)]($style)'
+style = "bg:#f7cc42"
+format = '[[ $symbol( $version)(\(#$virtualenv\)) ](fg:crust bg:#f7cc42)]($style)'
 
 [docker_context]
 symbol = ""
@@ -283,14 +288,14 @@ crust = "#181926"
 [cpp]
 disabled = false
 symbol = ""
-style = "bg:green"
-format = '[[ $symbol( $version ) ](fg:crust bg:green)]($style)'
+style = "bg:#6295cb"
+format = '[[ $symbol( $version ) ](fg:crust bg:#6295cb)]($style)'
 
 [custom.csharp]
 disabled = false
 symbol = "#"
-style = "bg:green"
+style = "bg:#903ba7"
 detect_extensions = ["cs", "csproj"]
 command = "dotnet --version"
 description = "C#"
-format = '[[ $symbol( v$output ) ](fg:crust bg:green)]($style)'
+format = '[[ $symbol( v$output ) ](fg:crust bg:#903ba7)]($style)'
