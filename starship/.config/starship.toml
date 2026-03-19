@@ -18,7 +18,7 @@ $java\
 [](bg:#6295cb fg:green)\
 $cpp\
 [](bg:#903ba7 fg:#6295cb)\
-$custom\
+$dotnet\
 [](bg:#f7cc42 fg:#903ba7)\
 $python\
 [](bg:sapphire fg:#f7cc42)\
@@ -291,11 +291,16 @@ symbol = ""
 style = "bg:#6295cb"
 format = '[[ $symbol( $version ) ](fg:crust bg:#6295cb)]($style)'
 
-[custom.csharp]
+# [custom.csharp]
+# disabled = false
+# symbol = "#"
+# style = "bg:#903ba7"
+# detect_extensions = ["cs", "csproj"]
+# command = "dotnet --version"
+# description = "C#"
+# format = '[[ $symbol( v$output ) ](fg:crust bg:#903ba7)]($style)'
+
+[dotnet]
 disabled = false
-symbol = "#"
 style = "bg:#903ba7"
-detect_extensions = ["cs", "csproj"]
-command = "dotnet --version"
-description = "C#"
-format = '[[ $symbol( v$output ) ](fg:crust bg:#903ba7)]($style)'
+format = '[[ ( $version ) ](fg:crust bg:#903ba7)]($style)'
